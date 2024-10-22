@@ -1,0 +1,10 @@
+:root {
+  --color-texto-principal: #adbc9f;
+  --color-texto-secundario: #fbfada;
+  --color-card: #ffffff;
+  --color-fondo: #12372a;
+}
+
+body {
+  background-color: var(--color-fondo);
+}
