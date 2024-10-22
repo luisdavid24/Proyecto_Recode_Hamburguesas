@@ -3,3 +3,41 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    color: var(--color-texto-secundario);
+    font-family: sans-serif;
+}
+
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+}
+#menu {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    place-items: center;
+    margin: 20px 0 20px 0;
+
+}
+
+.product {
+    width: 250px;
+    height: 420px;
+    text-align: start;
+    background-color: rgb(94, 94, 94, 60%);
+    border-radius: 10px;
+    padding: 10px 10px 10px 5px;
+    border-left: 10px solid #9b9b9b;
+}
+.product img {
+    margin-left: -5px;
+}
+img {
+    height: auto;
+    width: 200px;
+}
