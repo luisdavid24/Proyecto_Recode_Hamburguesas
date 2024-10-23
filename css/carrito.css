@@ -1,0 +1,36 @@
+body {
+    background-color: var(#12372a);
+  }
+  
+.cards {
+    background-color: var(--color-texto-principal);
+    border: 1px solid #ddd;
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; 
+    margin: 16px; 
+    padding: 8px;
+    max-width: 300px; 
+}
+
+.cards img{
+    width: 100%;
+    height: auto;
+}
+
+
+h1 {
+    color: var(--color-card);
+    margin: 0;
+}
+
+h4 {
+    color: var(--color-card);
+    margin: 0;
+}
+
+
+p {
+    color: var(--color-texto-secundario);
+    margin: 8px 0;
+}
