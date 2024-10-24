@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto-secundario);
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+h1,
+h2 {
+  color: var(--color-texto-principal);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#extras-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.extra-item {
+  background-color: var(--color-card);
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.extra-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.extra-item h3 {
+  color: var(--color-fondo);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.extra-item p {
+  color: #666;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.agregar-btn {
+  background-color: var(--color-texto-principal);
+  color: var(--color-fondo);
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.agregar-btn:hover {
+  background-color: var(--color-fondo);
+  color: var(--color-texto-principal);
+  transform: scale(1.05);
+  transition: 0.4s;
+}
+
+.agregar-btn:active {
+  transform: scale(0.98);
+}
+
+#extras-agregados-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.extra-agregado-item {
+  background-color: var(--color-texto-secundario);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.extra-agregado-item h4 {
+  color: var(--color-fondo);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.extra-agregado-item p {
+  color: #555;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+#total-precio {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-texto-principal);
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  #extras-container,
+  #extras-agregados-container {
+    grid-template-columns: 1fr;
+  }
+
+  .extra-item,
+  .extra-agregado-item {
+    padding: 1rem;
+  }
+
+  h1,
+  h2 {
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
+    margin-bottom: 1rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.extra-item,
+.extra-agregado-item {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.extra-item[data-cantidad="0"] .agregar-btn {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.agregar-btn:focus {
+  outline: 3px solid var(--color-texto-principal);
+  outline-offset: 2px;
+}
+
+.eliminar-btn {
+  background-color: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  justify-content: center;
+}
+
+.eliminar-btn:hover {
+  background-color: #ff6b81;
+  transform: translateY(-2px);
+}
+
+.eliminar-btn:active {
+  transform: translateY(0);
+}
+
+.eliminar-icon {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.extra-agregado-item.removing {
+  animation: slideOut 0.3s ease-out forwards;
+}
+
+@keyframes slideOut {
+  to {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+.eliminar-btn:focus {
+  outline: 3px solid #ff6b81;
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .eliminar-btn {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .eliminar-btn {
+    background-color: #ff6b81;
+  }
+
+  .eliminar-btn:hover {
+    background-color: #ff4757;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .extra-item,
+  .extra-agregado-item,
+  .agregar-btn {
+    animation: none;
+    transition: none;
+  }
+}

@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link href="./config/global.css" rel="stylesheet" />
-    <link href="./css/index.css" rel="stylesheet" />
-  </head>
-  <body>
-    <section class="show-Extras">
-      <div class="extra-Elemnts-Container">
-        <div class="extra-Element">
-          
-        </div>
-      </div>
-    </section>
-    <script src="./js/ingredienteExtra.js"></script>
-  </body>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selección de Extras</title>
+  <link rel="stylesheet" href="./config/global.css">
+  <link rel="stylesheet" href="./css/ingredienteExtra.css"> 
+</head>
+<body>
+  <div class="hamburguesa-selecionada" id="hamburguesa-selecionada">
+
+  </div>
+  <h1>Selecciona tus Extras</h1>
+  <div id="extras-container"></div> 
+
+  <h2>Extras Agregados</h2>
+  <div id="extras-agregados-container"></div> 
+
+  <h2>Total: $<span id="total-precio">0.00</span></h2>
+
+  <script type="module" src="./js/ingredienteExtra.js"></script> 
+</body>
 </html>
