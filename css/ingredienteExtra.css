@@ -106,10 +106,64 @@ h2 {
   font-size: 0.9rem;
 }
 
+
 #total-precio {
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--color-texto-principal);
+}
+.hamburguesa-selecionada {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.hamburguesa-imagen {
+  flex-shrink: 0;
+  width: 50%;
+  max-width: 400px;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-right: 30px;
+  border: 4px solid #f2f2f2;
+}
+
+.imagen-hamburguesa {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info-hamburguesa {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+}
+
+.titulo-hamburguesa {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.descripcion-hamburguesa {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.precio-hamburguesa {
+  font-size: 2rem;
+  color: #27ae60;
+  font-weight: bold;
+  margin-top: auto;
 }
 
 @media (max-width: 768px) {
