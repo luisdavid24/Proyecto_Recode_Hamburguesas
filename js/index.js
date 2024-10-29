@@ -76,6 +76,4 @@ menuHamburguesas.map(element => {
       localStorage.setItem("price", JSON.stringify(price.textContent));
       
 });
-
 });
-

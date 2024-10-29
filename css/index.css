@@ -77,3 +77,39 @@ img {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
+footer {
+  width: 100%;  
+  z-index: 1;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  bottom: 0;
+  text-align: center;
+  background-color: #afafaf;
+  overflow: hidden;
+  transition: background-color .5s;
+}
+
+.next {
+  text-decoration: none;
+  color: black;
+  padding: 20px 500px;
+  transition: color .5s;
+   
+}
+
+footer:hover {
+  background-color: #27be21;
+ 
+}
+
+.next:hover {
+  color: white;
+}
+
+button:hover{
+  cursor: pointer;
+}
