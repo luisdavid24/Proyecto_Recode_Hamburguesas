@@ -1,0 +1,191 @@
+/* Variables globales ya definidas en global.css */
+:root {
+    --color-texto-principal: #adbc9f;
+    --color-texto-secundario: #fbfada;
+    --color-card: #ffffff;
+    --color-fondo: #12372a;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: var(--color-texto-secundario);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    border-bottom: 3px solid var(--color-texto-principal);
+    padding-bottom: 10px;
+}
+
+/* Contenedor de la gráfica */
+canvas#ventasChart {
+    background-color: var(--color-card);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    canvas#ventasChart {
+        padding: 10px;
+    }
+}
+
+/* Contenedor principal de los botones */
+.botones-graficos {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Estilo base de los botones */
+.btn-grafico {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--color-texto-principal);
+    background: transparent;
+    color: var(--color-texto-secundario);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    min-width: 180px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(5px);
+}
+
+/* Efecto hover */
+.btn-grafico:hover {
+    background-color: var(--color-texto-principal);
+    color: var(--color-fondo);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(173, 188, 159, 0.25);
+}
+
+/* Estado activo */
+.btn-grafico.activo {
+    background-color: var(--color-texto-principal);
+    color: var(--color-fondo);
+    box-shadow: 0 4px 15px rgba(173, 188, 159, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Efecto al hacer click */
+.btn-grafico:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(173, 188, 159, 0.2);
+}
+
+/* Efecto de brillo al hover */
+.btn-grafico::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(251, 250, 218, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.btn-grafico:hover::before {
+    left: 100%;
+}
+
+/* Efecto ripple al click */
+.btn-grafico::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(251, 250, 218, 0.15);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease-out, height 0.6s ease-out;
+}
+
+.btn-grafico:active::after {
+    width: 400px;
+    height: 400px;
+}
+
+/* Animación para el botón activo */
+@keyframes pulseActive {
+    0% {
+        transform: scale(1) translateY(-2px);
+    }
+    50% {
+        transform: scale(0.98) translateY(-1px);
+    }
+    100% {
+        transform: scale(1) translateY(-2px);
+    }
+}
+
+.btn-grafico.activo {
+    animation: pulseActive 1s ease-in-out infinite;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .botones-graficos {
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .btn-grafico {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
+        min-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .botones-graficos {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .btn-grafico {
+        width: 90%;
+        max-width: 250px;
+    }
+}
+
+

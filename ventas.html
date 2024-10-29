@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ventas de Hamburguesas</title>
     <link href="./config/global.css" rel="stylesheet" />
     <link href="./css/ventas.css" rel="stylesheet" />
-  </head>
-  <body>
+</head>
+<body>
     <h1>Ventas de los Tipos de Hamburguesas</h1>
     <canvas id="ventasChart" width="400" height="200"></canvas> 
+    <div class="botones-graficos">
+    <button class="btn-grafico activo" onclick="cambiarGrafico('bar')">Gráfico de Barras</button>
+    <button class="btn-grafico" onclick="cambiarGrafico('line')">Gráfico de Líneas</button>
+    <button class="btn-grafico" onclick="cambiarGrafico('pie')">Gráfico de Pastel</button>
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./js/ventas.js"></script> 
-  </body>
+</body>
 </html>
